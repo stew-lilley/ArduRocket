@@ -433,7 +433,7 @@ static const AP_Param::Info var_info[] PROGMEM = {
 	GGROUP(channel_throttle,        "RC3_", RC_Channel),
 	// @Group: RC4_
 	// @Path: ../libraries/RC_Channel/RC_Channel.cpp
-	GGROUP(channel_rudder,          "RC4_", RC_Channel),
+	GGROUP(channel_yaw,          "RC4_", RC_Channel),
 
 	// @Group: RC5_
 	// @Path: ../libraries/RC_Channel/RC_Channel_aux.cpp, ../libraries/RC_Channel/RC_Channel.cpp

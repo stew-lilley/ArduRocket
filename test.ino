@@ -117,7 +117,7 @@ test_radio_pwm(uint8_t argc, const Menu::arg *argv)
 							g.channel_roll.radio_in,
 							g.channel_pitch.radio_in,
 							g.channel_throttle.radio_in,
-							g.channel_rudder.radio_in,
+							g.channel_yaw.radio_in,
 							g.rc_5.radio_in,
 							g.rc_6.radio_in,
 							g.rc_7.radio_in,
@@ -179,7 +179,7 @@ test_radio(uint8_t argc, const Menu::arg *argv)
 		g.channel_roll.calc_pwm();
 		g.channel_pitch.calc_pwm();
 		g.channel_throttle.calc_pwm();
-		g.channel_rudder.calc_pwm();
+		g.channel_yaw.calc_pwm();
 
 		// write out the servo PWM values
 		// ------------------------------
@@ -189,7 +189,7 @@ test_radio(uint8_t argc, const Menu::arg *argv)
 							g.channel_roll.control_in,
 							g.channel_pitch.control_in,
 							g.channel_throttle.control_in,
-							g.channel_rudder.control_in,
+							g.channel_yaw.control_in,
 							g.rc_5.control_in,
 							g.rc_6.control_in,
 							g.rc_7.control_in,
@@ -413,7 +413,7 @@ test_dipswitches(uint8_t argc, const Menu::arg *argv)
 			Serial.printf_P(PSTR("Mix:standard \trev roll:%d, rev pitch:%d, rev rudder:%d\n"),
 				(int)g.channel_roll.get_reverse(),
 				(int)g.channel_pitch.get_reverse(),
-				(int)g.channel_rudder.get_reverse());
+				(int)g.channel_yaw.get_reverse());
 		} else {
 			Serial.printf_P(PSTR("Mix:elevons \trev elev:%d, rev ch1:%d, rev ch2:%d\n"),
 				(int)g.reverse_elevons,

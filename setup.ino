@@ -125,7 +125,7 @@ setup_radio(uint8_t argc, const Menu::arg *argv)
 	g.channel_roll.radio_min 		= g.channel_roll.radio_in;
 	g.channel_pitch.radio_min 		= g.channel_pitch.radio_in;
 	g.channel_throttle.radio_min 	= g.channel_throttle.radio_in;
-	g.channel_rudder.radio_min 		= g.channel_rudder.radio_in;
+	g.channel_yaw.radio_min 		= g.channel_yaw.radio_in;
 	g.rc_5.radio_min = g.rc_5.radio_in;
 	g.rc_6.radio_min = g.rc_6.radio_in;
 	g.rc_7.radio_min = g.rc_7.radio_in;
@@ -134,7 +134,7 @@ setup_radio(uint8_t argc, const Menu::arg *argv)
 	g.channel_roll.radio_max 		= g.channel_roll.radio_in;
 	g.channel_pitch.radio_max 		= g.channel_pitch.radio_in;
 	g.channel_throttle.radio_max 	= g.channel_throttle.radio_in;
-	g.channel_rudder.radio_max 		= g.channel_rudder.radio_in;
+	g.channel_yaw.radio_max 		= g.channel_yaw.radio_in;
 	g.rc_5.radio_max = g.rc_5.radio_in;
 	g.rc_6.radio_max = g.rc_6.radio_in;
 	g.rc_7.radio_max = g.rc_7.radio_in;
@@ -142,7 +142,7 @@ setup_radio(uint8_t argc, const Menu::arg *argv)
 
 	g.channel_roll.radio_trim 		= g.channel_roll.radio_in;
 	g.channel_pitch.radio_trim 		= g.channel_pitch.radio_in;
-	g.channel_rudder.radio_trim 	= g.channel_rudder.radio_in;
+	g.channel_yaw.radio_trim 	= g.channel_yaw.radio_in;
 	g.rc_5.radio_trim = 1500;
 	g.rc_6.radio_trim = 1500;
 	g.rc_7.radio_trim = 1500;
@@ -159,7 +159,7 @@ setup_radio(uint8_t argc, const Menu::arg *argv)
 		g.channel_roll.update_min_max();
 		g.channel_pitch.update_min_max();
 		g.channel_throttle.update_min_max();
-		g.channel_rudder.update_min_max();
+		g.channel_yaw.update_min_max();
 		g.rc_5.update_min_max();
 		g.rc_6.update_min_max();
 		g.rc_7.update_min_max();
@@ -170,7 +170,7 @@ setup_radio(uint8_t argc, const Menu::arg *argv)
 			g.channel_roll.save_eeprom();
 			g.channel_pitch.save_eeprom();
 			g.channel_throttle.save_eeprom();
-			g.channel_rudder.save_eeprom();
+			g.channel_yaw.save_eeprom();
 			g.rc_5.save_eeprom();
 			g.rc_6.save_eeprom();
 			g.rc_7.save_eeprom();
@@ -502,7 +502,7 @@ print_radio_values()
 	Serial.printf_P(PSTR("CH1: %d | %d | %d\n"), (int)g.channel_roll.radio_min, (int)g.channel_roll.radio_trim, (int)g.channel_roll.radio_max);
 	Serial.printf_P(PSTR("CH2: %d | %d | %d\n"), (int)g.channel_pitch.radio_min, (int)g.channel_pitch.radio_trim, (int)g.channel_pitch.radio_max);
 	Serial.printf_P(PSTR("CH3: %d | %d | %d\n"), (int)g.channel_throttle.radio_min, (int)g.channel_throttle.radio_trim, (int)g.channel_throttle.radio_max);
-	Serial.printf_P(PSTR("CH4: %d | %d | %d\n"), (int)g.channel_rudder.radio_min, (int)g.channel_rudder.radio_trim, (int)g.channel_rudder.radio_max);
+	Serial.printf_P(PSTR("CH4: %d | %d | %d\n"), (int)g.channel_yaw.radio_min, (int)g.channel_yaw.radio_trim, (int)g.channel_yaw.radio_max);
 	Serial.printf_P(PSTR("CH5: %d | %d | %d\n"), (int)g.rc_5.radio_min, (int)g.rc_5.radio_trim, (int)g.rc_5.radio_max);
 	Serial.printf_P(PSTR("CH6: %d | %d | %d\n"), (int)g.rc_6.radio_min, (int)g.rc_6.radio_trim, (int)g.rc_6.radio_max);
 	Serial.printf_P(PSTR("CH7: %d | %d | %d\n"), (int)g.rc_7.radio_min, (int)g.rc_7.radio_trim, (int)g.rc_7.radio_max);

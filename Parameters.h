@@ -136,7 +136,7 @@ public:
         k_param_channel_roll = 170,
         k_param_channel_pitch,
         k_param_channel_throttle,
-        k_param_channel_rudder,
+        k_param_channel_yaw,
         k_param_rc_5,
         k_param_rc_6,
         k_param_rc_7,
@@ -343,7 +343,7 @@ public:
     RC_Channel  channel_roll;
     RC_Channel  channel_pitch;
     RC_Channel  channel_throttle;
-    RC_Channel  channel_rudder;
+    RC_Channel  channel_yaw;
 	RC_Channel_aux	rc_5;
 	RC_Channel_aux	rc_6;
 	RC_Channel_aux	rc_7;

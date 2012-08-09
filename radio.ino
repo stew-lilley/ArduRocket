@@ -13,18 +13,18 @@ static void init_rc_in()
 	// set rc channel ranges
 	g.channel_roll.set_angle(SERVO_MAX);
 	g.channel_pitch.set_angle(SERVO_MAX);
-	g.channel_rudder.set_angle(SERVO_MAX);
+	g.channel_yaw.set_angle(SERVO_MAX);
 	g.channel_throttle.set_range(0, 100);
 
 	// set rc dead zones
 	g.channel_roll.set_dead_zone(60);
 	g.channel_pitch.set_dead_zone(60);
-	g.channel_rudder.set_dead_zone(60);
+	g.channel_yaw.set_dead_zone(60);
 	g.channel_throttle.set_dead_zone(6);
 
 	//g.channel_roll.dead_zone 	= 60;
 	//g.channel_pitch.dead_zone 	= 60;
-	//g.channel_rudder.dead_zone 	= 60;
+	//g.channel_yaw.dead_zone 	= 60;
 	//g.channel_throttle.dead_zone = 6;
 
 	//set auxiliary ranges
@@ -51,7 +51,7 @@ static void init_rc_out()
 	APM_RC.OutputCh(CH_1, 	g.channel_roll.radio_trim);					// Initialization of servo outputs
 	APM_RC.OutputCh(CH_2, 	g.channel_pitch.radio_trim);
 	APM_RC.OutputCh(CH_3, 	g.channel_throttle.radio_min);
-	APM_RC.OutputCh(CH_4, 	g.channel_rudder.radio_trim);
+	APM_RC.OutputCh(CH_4, 	g.channel_yaw.radio_trim);
 
 	APM_RC.OutputCh(CH_5, 	g.rc_5.radio_trim);
 	APM_RC.OutputCh(CH_6, 	g.rc_6.radio_trim);
@@ -73,7 +73,7 @@ static void read_radio()
 	}
 
 	g.channel_throttle.set_pwm(APM_RC.InputCh(CH_3));
-	g.channel_rudder.set_pwm(APM_RC.InputCh(CH_4));
+	g.channel_yaw.set_pwm(APM_RC.InputCh(CH_4));
 	g.rc_5.set_pwm(APM_RC.InputCh(CH_5));
 	g.rc_6.set_pwm(APM_RC.InputCh(CH_6));
 	g.rc_7.set_pwm(APM_RC.InputCh(CH_7));
@@ -161,13 +161,13 @@ static void trim_control_surfaces()
 		g.channel_roll.radio_trim 	= center;
 		g.channel_pitch.radio_trim 	= center;
 	}
-	g.channel_rudder.radio_trim = g.channel_rudder.radio_in;
+	g.channel_yaw.radio_trim = g.channel_yaw.radio_in;
 
 	// save to eeprom
 	g.channel_roll.save_eeprom();
 	g.channel_pitch.save_eeprom();
 	g.channel_throttle.save_eeprom();
-	g.channel_rudder.save_eeprom();
+	g.channel_yaw.save_eeprom();
 	G_RC_AUX(k_aileron)->save_eeprom();
 }
 
@@ -192,12 +192,12 @@ static void trim_radio()
 		g.channel_roll.radio_trim 	= center;
 		g.channel_pitch.radio_trim 	= center;
 	}
-	g.channel_rudder.radio_trim = g.channel_rudder.radio_in;
+	g.channel_yaw.radio_trim = g.channel_yaw.radio_in;
 
 	// save to eeprom
 	g.channel_roll.save_eeprom();
 	g.channel_pitch.save_eeprom();
 	//g.channel_throttle.save_eeprom();
-	g.channel_rudder.save_eeprom();
+	g.channel_yaw.save_eeprom();
 	G_RC_AUX(k_aileron)->save_eeprom();
 }

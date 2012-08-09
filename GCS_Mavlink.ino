@@ -258,7 +258,7 @@ static void NOINLINE send_servo_out(mavlink_channel_t chan)
         10000 * g.channel_roll.norm_output(),
         10000 * g.channel_pitch.norm_output(),
         10000 * g.channel_throttle.norm_output(),
-        10000 * g.channel_rudder.norm_output(),
+        10000 * g.channel_yaw.norm_output(),
         0,
         0,
         0,
@@ -276,7 +276,7 @@ static void NOINLINE send_radio_in(mavlink_channel_t chan)
         g.channel_roll.radio_in,
         g.channel_pitch.radio_in,
         g.channel_throttle.radio_in,
-        g.channel_rudder.radio_in,
+        g.channel_yaw.radio_in,
         g.rc_5.radio_in,       // XXX currently only 4 RC channels defined
         g.rc_6.radio_in,
         g.rc_7.radio_in,

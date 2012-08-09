@@ -1,0 +1,7 @@
+Release Notes:
+
+V0.1 - Initial Development Release.  Very rough and completely unfinished.
+
+V0.11 - 8/9/12  Features List
+- changed set_servos() to account for 4 canard servos with coupled pitch/roll and yaw/roll
+- changed demo_servos() to demo all 4 control surfaces in roll, pitch and yaw

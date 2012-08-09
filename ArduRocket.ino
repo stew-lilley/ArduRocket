@@ -1,6 +1,6 @@
 /// -*- tab-width: 4; Mode: C++; c-basic-offset: 4; indent-tabs-mode: nil -*-
 
-#define THISFIRMWARE "ArduRocket V1.00"
+#define THISFIRMWARE "ArduRocket V0.2"
 /*
 Original ArduPlane code credits:
 Authors:    Doug Weibel, Jose Julio, Jordi Munoz, Jason Short, Andrew Tridgell, Randy Mackay, Pat Hickey, John Arne Birkeland, Olivier Adler
@@ -873,7 +873,7 @@ static void update_current_flight_mode(void)
   				// ---------------------------------
   				g.channel_roll.servo_out = g.channel_roll.pwm_to_angle();
   				g.channel_pitch.servo_out = g.channel_pitch.pwm_to_angle();
-  				g.channel_rudder.servo_out = g.channel_rudder.pwm_to_angle();
+  				g.channel_yaw.servo_out = g.channel_yaw.pwm_to_angle();
   				break;
   		}
 }

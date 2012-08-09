@@ -64,7 +64,7 @@ static void update_servo_switches()
 	if (g.mix_mode == 0) {
 		g.channel_roll.set_reverse((PINE & 128) ? true : false);
 		g.channel_pitch.set_reverse((PINE & 64) ? true : false);
-		g.channel_rudder.set_reverse((PINL & 64) ? true : false);
+		g.channel_yaw.set_reverse((PINL & 64) ? true : false);
 	} else {
 		g.reverse_elevons 	= (PINE & 128) ? true : false;
 		g.reverse_ch1_elevon = (PINE & 64) ? true : false;
